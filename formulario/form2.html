@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularioclase</title>
+    <style>
+        /* Estilos CSS para el formulario */
+        .formulario {
+            display: none; /* Inicialmente oculto */
+            margin-top: 20px; /* Espacio entre los botones y el formulario */
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <!-- Botón para mostrar/ocultar el formulario 1 -->
+        <button onclick="toggleForm('formulario1')">primer form</button>
+        <!-- Botón para mostrar/ocultar el formulario 2 -->
+        <button onclick="toggleForm('formulario2')">Segundo form</button>
+        <!-- Botón para mostrar/ocultar el formulario 3 -->
+        <button onclick="toggleForm('formulario3')">tercero form</button>
+    </p>
+    
+    <div class="content" id="content_first">
+        <p></p>
+    </div><!-- #content_first -->
+    <div class="content" id="content_second">
+        <p></p>
+    </div><!-- #content_second -->
+    <div class="content" id="content_third">
+        <p>.</p>
+    </div><!-- #content_third -->
+
+    <!-- Formulario 1 -->
+    <div class="formulario" id="formulario1">
+        <h1>Formulario 1</h1>
+        <form id="loginForm1">
+            <div>
+                <label for="Nombre1">Usuario:</label>
+                <input type="text" id="Nombre1" name="Nombre1" required>
+            </div>
+            <div>
+                <label for="Direccion1">Dirección:</label>
+                <input type="text" id="Direccion1" name="Direccion1" required>
+            </div>
+            <div>
+                <label for="Telefono1">Teléfono:</label>
+                <input type="tel" id="Telefono1" name="Telefono1" required>
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <!-- Formulario 2 -->
+    <div class="formulario" id="formulario2">
+        <h1>Formulario 2</h1>
+        <form id="loginForm2">
+            <div>
+                <label for="Nombre2">Usuario:</label>
+                <input type="text" id="Nombre2" name="Nombre2" required>
+            </div>
+            <div>
+                <label for="Direccion2">Dirección:</label>
+                <input type="text" id="Direccion2" name="Direccion2" required>
+            </div>
+            <div>
+                <label for="Telefono2">Teléfono:</label>
+                <input type="tel" id="Telefono2" name="Telefono2" required>
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <!-- Formulario 3 -->
+    <div class="formulario" id="formulario3">
+        <h1>Formulario 3</h1>
+        <form id="loginForm3">
+            <div>
+                <label for="Nombre3">Usuario:</label>
+                <input type="text" id="Nombre3" name="Nombre3" required>
+            </div>
+            <div>
+                <label for="Direccion3">Dirección:</label>
+                <input type="text" id="Direccion3" name="Direccion3" required>
+            </div>
+            <div>
+                <label for="Telefono3">Teléfono:</label>
+                <input type="tel" id="Telefono3" name="Telefono3" required>
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <!-- Script para mostrar/ocultar los formularios -->
+    <script>
+        function toggleForm(formId) {
+            var formElement = document.getElementById(formId);
+            // Cambia la propiedad 'display' del formulario
+            formElement.style.display = (formElement.style.display === 'none') ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

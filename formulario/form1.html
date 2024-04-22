@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Formularios</title>
+    <link rel="stylesheet" href="form1.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Mostrar Formularios De Alumnos</h2>
+        <div class="buttons">
+            <a href="#alumnos">Formulario de Alumnos</a>
+            <a href="#notas">Formulario de Notas</a>
+            <a href="#materia">Formulario de Materias</a>
+        </div>
+        <div id="alumnos" class="formulario">
+            <h3>Formulario de Alumnos</h3>
+            <form action="#">
+                <label for="nombreAlumno">Nombre:</label>
+                <input type="text" id="nombreAlumno" name="nombreAlumno" required>
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div id="notas" class="formulario">
+            <h3>Formulario de Notas</h3>
+            <form action="#">
+                <label for="nombreAlumnoNota">Alumno:</label>
+                <input type="text" id="nombreAlumnoNota" name="nombreAlumnoNota" required>
+
+                <label for="materia">Materia:</label>
+                <input type="text" id="materia" name="materia" required>
+
+                <label for="nota">Nota:</label>
+                <input type="number" id="nota" name="nota" required>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div id="materia" class="formulario">
+            <h3>Formulario de Materias</h3>
+            <form action="#">
+                <label for="codigoMateria">Código de Materia:</label>
+                <input type="text" id="codigoMateria" name="codigoMateria" required>
+
+                <label for="nombreMateria">Nombre de Materia:</label>
+                <input type="text" id="nombreMateria" name="nombreMateria" required>
+
+                <label for="semestre">Semestre:</label>
+                <input type="number" id="semestre" name="semestre" required>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
