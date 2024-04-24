@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>jQuery memory card / concentration / pairs game</title>
+ 
+  <link rel="stylesheet" href="../css/quizymemorygame.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div id="container">
+  <h1>jQuery memory Latinoamerica</h1>
+
+  <form id="user-form">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="age">Edad:</label>
+    <input type="number" id="age" name="age" required>
+    <br>
+    <button type="submit">Empezar el juego</button>
+  </form>
+
+  <div id="game-container" style="display:none;">
+    <div id="tutorial-memorygame" class="quizy-memorygame">
+      <ul>
+        <li class="match1">
+          <img src="img/flag-argentina.jpeg" width="156" height="156"> 
+        </li>
+        <li class="match2">
+          <img src="img/flag-Bolivia.jpeg" width="156" height="156">
+        </li>
+        <li class="match3">
+          <img src="img/flag-chile.jpeg" width="156" height="156">
+        </li>
+        <li class="match4">
+          <img src="img/flag-colombia.jpeg" width="156" height="156">
+        </li>
+        <li class="match5">
+          <img src="img/flag-urugay.jpeg" width="156" height="156">
+        </li>
+        <li class="match6">
+          <img src="img/flag-venezuela.jpeg" width="156" height="156">
+        </li>
+        <li class="match1">
+          <br><br><br><p class="text-style1">Argentina</p>
+        </li>
+        <li class="match2">
+          <br><br><br><p class="text-style1">Bolivia</p>
+        </li>
+        <li class="match3">
+          <br><br><br><p class="text-style1">Chile</p>
+        </li>
+        <li class="match4">
+          <br><br><br><p class="text-style1">Colombia<br></p>
+        </li>
+        <li class="match5">
+          <br><br><br><p class="text-style1">Uruguay</p>
+        </li>
+        <li class="match6">
+          <br><br><br><p class="text-style1">Venezuela</p>
+        </li>
+      </ul>
+    </div>
+    <div class="reset-button">
+      <a id="restart" href="#">Reset game</a>
+    </div>
+
+    <div class="stats-container">
+      <h2>Estadísticas del juego:</h2>
+      <p>Victorias: <span id="wins">0</span></p>
+      <p>Fallos: <span id="fails">0</span></p>
+    </div>
+  </div>
+</div>
+
+<div>Flag icons for this demo - by <a href="http://www.gosquared.com/liquidicity/archives/1493" target="_blank">Fernando Aponte</a></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../js/jquery-1.7.1.min.js"><\/script>')</script>
+<script src="../js/jquery-ui-1.8.17.custom.min.js"></script>
+<script src="../js/jquery.flip.min.js"></script>
+<script src="../js/jquery.quizymemorygame.js"></script>
+
+<script>
+  // Manejo del envío del formulario
+  $('#user-form').submit(function(event) {
+    event.preventDefault(); // Prevenir la recarga de la página
+    var name = $('#name').val();
+    var age = $('#age').val();
+    // Ocultar el formulario y mostrar el juego
+    $('#container').children().hide();
+    $('#game-container').show();
+    // Mostrar los datos del usuario
+    $('.stats-container').after('<div id="user-info"><h2>Datos del usuario:</h2><p>Nombre: ' + name + '</p><p>Edad: ' + age + '</p></div>');
+  });
+
+  var wins = 0;
+  var fails = 0;
+
+  var quizyParams = {
+    itemWidth: 156,
+    itemHeight: 156,
+    itemsMargin: 40,
+    colCount: 4,
+    animType: 'flip',
+    flipAnim: 'tb',
+    animSpeed: 250,
+    resultIcons: true,
+    randomised: true,
+    onFail: function () {
+      fails++;
+      $('#fails').text(fails);
+    },
+    onSuccess: function () {
+      wins++;
+      $('#wins').text(wins);
+    }
+  };
+
+  $('#tutorial-memorygame').quizyMemoryGame(quizyParams);
+
+  $('#restart').click(function (e) {
+    e.preventDefault();
+    $('#tutorial-memorygame').quizyMemoryGame('restart');
+    wins = 0;
+    fails = 0;
+    $('#wins').text(wins);
+    $('#fails').text(fails);
+  });
+</script>
+<meta name="description" content="Quizy jquery plugin for creating memory game (concentration game, pairs game)">
+<meta name="keywords" content="jquery plugin, memory game, concentration, pairs game, javascript, jquery">
+<meta name="viewport" content="width=device-width">
+</body>
+</html>
