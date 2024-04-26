@@ -139,7 +139,9 @@
   body {
     font-family: Helvetica, Arial, Verdana;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 120px;
+   font-family: Helvetica, Arial, Verdana;
+    text-align: center;
   }
   
   #tutorial-memorygame {
@@ -163,10 +165,7 @@
   .stats-container {
     margin-top: 20px;
   }
-  body {
-    font-family: Helvetica, Arial, Verdana;
-    text-align: center;
-  }
+
   
   #tutorial-memorygame {
     margin: auto;
